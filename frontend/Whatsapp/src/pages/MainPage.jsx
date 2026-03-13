@@ -15,8 +15,18 @@ const MainPage = () => {
           <div className="container flex justify-between items-center p-5">
             <h4 className="text-2xl text-white font-semibold">WhatsApp</h4>
             <div className="flex items-center justify-center text-white gap-3">
-              <FaRegSquarePlus />
-              <BsThreeDotsVertical />
+              <div className="relative group hover:bg-[#282929] flex items-center justify-center rounded-full h-15 w-15 cursor-pointer">
+                <FaRegSquarePlus size={20} />
+                <span className="absolute left-full ml-3 px-2 py-1 bg-[#282929] text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                  New Chat
+                </span>
+              </div>
+              <div className="relative group hover:bg-[#282929] flex items-center justify-center rounded-full h-15 w-15 cursor-pointer">
+                <BsThreeDotsVertical size={20} />
+                <span className="absolute left-full ml-3 px-2 py-1 bg-[#282929] text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                  Menu
+                </span>
+              </div>
             </div>
           </div>
         </div>
