@@ -10,8 +10,8 @@ const app = express();
 app.use(cors());
 connectDB();
 
-app.use(express.json);
-app.use(express.urlencoded);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/auth", authRoutes);
 

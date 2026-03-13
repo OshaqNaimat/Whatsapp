@@ -1,0 +1,60 @@
+import React from "react";
+import { BsFillChatLeftTextFill } from "react-icons/bs";
+import { HiStatusOnline } from "react-icons/hi";
+import { IoLogOut, IoPeople } from "react-icons/io5";
+
+const MainPage = () => {
+  return (
+    <>
+      <div className="grid grid-cols-12  h-149">
+        {/* side area */}
+        <div className="col-span-1 bg-[#1D1F1F] ">
+          <div className="flex flex-col text-white p-5 items-center justify-center gap-4">
+            <div className="relative group hover:bg-[#282929] flex items-center justify-center rounded-full h-15 w-15 cursor-pointer">
+              <BsFillChatLeftTextFill size={28} />
+              <span className="absolute left-full ml-3 px-2 py-1 bg-[#282929] text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                Chats
+              </span>
+            </div>
+
+            <div className="relative group hover:bg-[#282929] flex items-center justify-center rounded-full h-15 w-15 cursor-pointer">
+              <HiStatusOnline size={28} />
+              <span className="absolute left-full ml-3 px-2 py-1 bg-[#282929] text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                Status
+              </span>
+            </div>
+
+            <div className="relative group hover:bg-[#282929] flex items-center justify-center rounded-full h-15 w-15 cursor-pointer">
+              <IoPeople size={28} />
+              <span className="absolute left-full ml-3 px-2 py-1 bg-[#282929] text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                People
+              </span>
+            </div>
+
+            <div className="relative group hover:bg-[#282929] flex items-center justify-center rounded-full h-15 w-15 cursor-pointer">
+              <IoLogOut size={28} />
+              <span className="absolute left-full ml-3 px-2 py-1 bg-[#282929] text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                Logout
+              </span>
+            </div>
+          </div>
+        </div>
+        {/* all chats */}
+        <div className="col-span-5 bg-[#161717]"></div>
+        {/* single chat and messages */}
+        <div className="col-span-6 bg-black">
+          <div className="header bg-[#1A0A2E]"></div>
+          <div className="mainchat">
+            <img
+              className="w-full"
+              src="https://camo.githubusercontent.com/c42c83df2fd1e442ef1e0ed69cc20d21f65308fc2f0dca2a8035360738d49c8c/68747470733a2f2f7765622e77686174736170702e636f6d2f696d672f62672d636861742d74696c652d6461726b5f61346265353132653731393562366237333364393131306234303866303735642e706e67"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default MainPage;
