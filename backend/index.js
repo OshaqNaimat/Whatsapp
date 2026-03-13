@@ -4,9 +4,10 @@ import dotenv from "dotenv";
 import { authRoutes } from "./routes/userRoutes.js";
 import { errorhandler } from "./middleware/errorMiddleware.js";
 import { connectDB } from "./database/connect.js";
+import cors from "cors";
 dotenv.config();
 const app = express();
-
+app.use(cors());
 connectDB();
 
 app.use(express.json);
