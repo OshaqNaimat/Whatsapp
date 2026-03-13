@@ -1,46 +1,25 @@
 import React from "react";
-import { BsFillChatLeftTextFill } from "react-icons/bs";
-import { HiStatusOnline } from "react-icons/hi";
-import { IoLogOut, IoPeople } from "react-icons/io5";
+import { FaRegSquarePlus } from "react-icons/fa6";
+
+import SideBar from "../components/SideBar";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 const MainPage = () => {
   return (
     <>
       <div className="grid grid-cols-12  h-149">
         {/* side area */}
-        <div className="col-span-1 bg-[#1D1F1F] ">
-          <div className="flex flex-col text-white p-5 items-center justify-center gap-4">
-            <div className="relative group hover:bg-[#282929] flex items-center justify-center rounded-full h-15 w-15 cursor-pointer">
-              <BsFillChatLeftTextFill size={28} />
-              <span className="absolute left-full ml-3 px-2 py-1 bg-[#282929] text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-                Chats
-              </span>
-            </div>
-
-            <div className="relative group hover:bg-[#282929] flex items-center justify-center rounded-full h-15 w-15 cursor-pointer">
-              <HiStatusOnline size={28} />
-              <span className="absolute left-full ml-3 px-2 py-1 bg-[#282929] text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-                Status
-              </span>
-            </div>
-
-            <div className="relative group hover:bg-[#282929] flex items-center justify-center rounded-full h-15 w-15 cursor-pointer">
-              <IoPeople size={28} />
-              <span className="absolute left-full ml-3 px-2 py-1 bg-[#282929] text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-                People
-              </span>
-            </div>
-
-            <div className="relative group hover:bg-[#282929] flex items-center justify-center rounded-full h-15 w-15 cursor-pointer">
-              <IoLogOut size={28} />
-              <span className="absolute left-full ml-3 px-2 py-1 bg-[#282929] text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-                Logout
-              </span>
+        <SideBar />
+        {/* all chats */}
+        <div className="col-span-5 bg-[#161717]">
+          <div className="container flex justify-between items-center p-5">
+            <h4 className="text-2xl text-white font-semibold">WhatsApp</h4>
+            <div className="flex items-center justify-center text-white gap-3">
+              <FaRegSquarePlus />
+              <BsThreeDotsVertical />
             </div>
           </div>
         </div>
-        {/* all chats */}
-        <div className="col-span-5 bg-[#161717]"></div>
         {/* single chat and messages */}
         <div className="col-span-6 bg-black">
           <div className="header bg-[#1A0A2E]"></div>
