@@ -1,32 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaRegSquarePlus } from "react-icons/fa6";
 
 import SideBar from "../components/SideBar";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { IoSearch } from "react-icons/io5";
+import SearchBar from "../components/SearchBar";
 
 const MainPage = () => {
+  const [Green, setGreen] = useState(false);
   return (
     <>
-      <div className="grid grid-cols-12  h-149">
+      <div className="grid grid-cols-12 ">
         {/* side area */}
         <SideBar />
         {/* all chats */}
         <div className="col-span-5 bg-[#161717]">
           <div className="container flex justify-between items-center p-5">
-            <h4 className="text-2xl text-white font-semibold">WhatsApp</h4>
+            <h4 className="text-2xl text-white font-semibold">MessageHub</h4>
             <div className="flex items-center justify-center text-white gap-3">
-              <div className="relative group hover:bg-[#282929] flex items-center justify-center rounded-full h-15 w-15 cursor-pointer">
+              <div className="relative group hover:bg-[#282929] flex items-center justify-center rounded-full h-10 w-10 cursor-pointer">
                 <FaRegSquarePlus size={20} />
                 <span className="absolute left-full ml-3 px-2 py-1 bg-[#282929] text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
                   New Chat
                 </span>
               </div>
-              <div className="relative group hover:bg-[#282929] flex items-center justify-center rounded-full h-15 w-15 cursor-pointer">
+              <div className="relative group hover:bg-[#282929] flex items-center justify-center rounded-full h-10 w-10 cursor-pointer">
                 <BsThreeDotsVertical size={20} />
                 <span className="absolute left-full ml-3 px-2 py-1 bg-[#282929] text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
                   Menu
                 </span>
               </div>
+            </div>
+          </div>
+          <SearchBar />
+          <div className="flex p-2 container gap-2">
+            <div
+              onClick={() => setGreen(true)}
+              className={`w-14 h-10  font-semibold border border-gray-500 flex items-center justify-center rounded-full cursor-pointer ${setGreen ? "bg-[#11432F] text-[#D9FDB3]" : "text-[#A4ACA4]"}`}
+            >
+              All
+            </div>
+            <div
+              onClick={() => setGreen(true)}
+              className={`w-20 h-10  font-semibold border border-gray-500 flex items-center justify-center rounded-full cursor-pointer ${setGreen ? "bg-[#11432F] text-[#D9FDB3]" : "text-[#A4ACA4]"}`}
+            >
+              Unread
+            </div>
+            <div
+              onClick={() => setGreen(true)}
+              className={`w-19 h-10  font-semibold border border-gray-500 flex items-center justify-center rounded-full cursor-pointer ${setGreen ? "bg-[#11432F] text-[#D9FDB3]" : "text-[#A4ACA4]"}`}
+            >
+              Groups
+            </div>
+            <div
+              onClick={() => setGreen(true)}
+              className={`w-25 h-10  font-semibold border border-gray-500 flex items-center justify-center rounded-full cursor-pointer ${setGreen ? "bg-[#11432F] text-[#D9FDB3]" : "text-[#A4ACA4]"}`}
+            >
+              Favourites
             </div>
           </div>
         </div>
